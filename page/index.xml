@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Pages on かなりあ</title>
+        <link>https://blog.canaria.cc/page/</link>
+        <description>Recent content in Pages on かなりあ</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Sun, 20 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.canaria.cc/page/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>About</title>
+        <link>https://blog.canaria.cc/about/</link>
+        <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/about/</guid>
+        <description>&lt;p&gt;Hi there, I&amp;rsquo;m canaria, from Taiwan!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Site Reliability Engineer.&lt;/li&gt;
+&lt;li&gt;Master&amp;rsquo;s student at National Yang Ming Chiao Tung University (NYCU).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since I&amp;rsquo;m not sure what to say, let the music speak for me.
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe loading=&#34;lazy&#34; 
+            src=&#34;https://www.youtube.com/embed/Uns56HtuejM&#34; 
+            allowfullscreen 
+            title=&#34;YouTube Video&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://blog.canaria.cc/archives/</link>
+        <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://blog.canaria.cc/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

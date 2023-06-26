@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>cisco on かなりあ</title>
+        <link>https://blog.canaria.cc/tags/cisco/</link>
+        <description>Recent content in cisco on かなりあ</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Sun, 06 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.canaria.cc/tags/cisco/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Cisco CCNA (200-301) 考試心得</title>
+        <link>https://blog.canaria.cc/2022/cert-02/</link>
+        <pubDate>Sun, 06 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/2022/cert-02/</guid>
+        <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
+&lt;p&gt;進入公司當社畜後，因為公司業務的關係，我發現大量同事持有各式的網路證照，而其中又以&lt;a class=&#34;link&#34; href=&#34;https://www.cisco.com/c/en/us/training-events/training-certifications/certifications.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cisco&lt;/a&gt;的為大宗。一方面想證明自己的實力，一方面公司又對相關證照有全額補助(&lt;del&gt;這才是重點&lt;/del&gt;)，所以就決定來考考看了。&lt;/p&gt;
+&lt;h2 id=&#34;測驗資訊&#34;&gt;測驗資訊&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;考試費用：美金300元 (約合新台幣8500元)&lt;/li&gt;
+&lt;li&gt;證照費用：第一次申請紙本證書&lt;strong&gt;免費&lt;/strong&gt;，隨附電子證書 (若需補發紙本證書則須美金15元)&lt;/li&gt;
+&lt;li&gt;考試時間：於&lt;a class=&#34;link&#34; href=&#34;https://home.pearsonvue.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pearson VUE&lt;/a&gt;官網報名時選擇之考試時間&lt;/li&gt;
+&lt;li&gt;考試地點：&lt;a class=&#34;link&#34; href=&#34;https://www.uuu.com.tw/TestCenter/Vue&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;恆逸教育&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://www.pcschool.com.tw/branch-school&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;巨匠電腦&lt;/a&gt;等考場，以&lt;a class=&#34;link&#34; href=&#34;https://home.pearsonvue.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pearson VUE&lt;/a&gt;官網公布為準&lt;/li&gt;
+&lt;li&gt;攜帶物品：&lt;strong&gt;身分證&lt;/strong&gt; (查驗用)、&lt;strong&gt;印有英文姓名之信用卡&lt;/strong&gt; (查驗用)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cisco-ccna-200-301&#34;&gt;Cisco CCNA (200-301)&lt;/h2&gt;
+&lt;p&gt;CCNA，全名Cisco Certified Network Associate，是cisco的網路認證，證明工程師已掌握網路的基礎知識，並可以進行路由器的安裝、配置和操作。(棒讀)&lt;br&gt;
+除非考場有其他安排，不然幾乎每個上班日都可以找到考場考試，考試時間的安排相當彈性。&lt;/p&gt;
+&lt;p&gt;cisco認證每隔一段時間就會改版，考試代碼也會隨之更動，200-301代表的正是&lt;strong&gt;考試代碼&lt;/strong&gt;。改版後的教材和題庫都會發生變化，練習時要注意不要拿到舊版的教材或題庫，避免在實際考試時遇到的有所出入。&lt;br&gt;
+&lt;img src=&#34;https://www.uuu.com.tw/Public/images/course/Cisco/career-path.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Cisco Certified&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;考前準備&#34;&gt;考前準備&lt;/h2&gt;
+&lt;p&gt;CCNA的考試分為選擇題和拖圖題。選擇題有可能是單選或多選，托圖題則是將左邊的文字方塊拖動到右邊放開即可，非常直覺。&lt;br&gt;
+考試我主要靠公司內部的教育訓練文件、練習考古題，然後將旗標出版社的&lt;a class=&#34;link&#34; href=&#34;https://www.books.com.tw/products/0010869117&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CCNA Certification Study Guide&lt;/a&gt;譯本作為參考書來準備。雖然只看考古題的話也能通過，不過建議照著書本的學習軌跡走，收穫會更多。&lt;br&gt;
+&lt;img src=&#34;https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/086/91/0010869117.jpg&amp;amp;v=5f4639b1&amp;amp;w=348&amp;amp;h=348&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CCNA Certification Study Guide&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;考試流程及證照請領&#34;&gt;考試流程及證照請領&lt;/h2&gt;
+&lt;p&gt;報名流程可以參考&lt;a class=&#34;link&#34; href=&#34;https://www.uuu.com.tw/TestCenter/Steps&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;恆逸考試中心的教學&lt;/a&gt;到&lt;a class=&#34;link&#34; href=&#34;https://home.pearsonvue.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pearson VUE&lt;/a&gt;官網報名。&lt;br&gt;
+如果需要開立發票才能報帳的話，則需要由考試中心代為報名(恆逸或巨匠都可以)，而發票則是在考試後向考試中心索取。&lt;br&gt;
+報名後請在考試當天的指定時段到考場(&lt;strong&gt;建議提早30分鐘&lt;/strong&gt;)，方便工作人員進行作業，也助於緩和緊張情緒。&lt;/p&gt;
+&lt;p&gt;我選擇的考場是恆逸考試中心，在考場櫃台報到後，工作人員會跟你核對&lt;strong&gt;身分證&lt;/strong&gt;、&lt;strong&gt;印有英文姓名之信用卡&lt;/strong&gt;，並拍攝大頭照以確認身分。所有流程完成後工作人員就會帶你進入考場。所有考試一樣，需要將隨身物品放到置物區，考場會提供小白板和白板筆作為計算用途。&lt;br&gt;
+在考前會有一個問卷調查，詢問你的教育程度、公司資訊、距離考場的距離等。這邊要注意的是，其中&lt;strong&gt;你是否滿18歲&lt;/strong&gt;和&lt;strong&gt;你是否同意cisco相關規章&lt;/strong&gt;請一定要&lt;strong&gt;選擇YES&lt;/strong&gt;，否則考試可能會中斷(據說)。&lt;/p&gt;
+&lt;p&gt;CCNA的考試時間共170分鐘，考題約100題，及格門檻為825分/1000分。&lt;br&gt;
+需要注意的是，CCNA考試&lt;strong&gt;不能返回上一題修改答案&lt;/strong&gt;，請&lt;strong&gt;確認答案沒有選錯再點NEXT送出&lt;/strong&gt;，也請注意不要連點兩下NEXT跳題。&lt;br&gt;
+考試完成後會直接在螢幕上顯示是否通過，通過後工作人員會把成績單印出來給你(封面是剛才拍的超醜大頭照)，收好後就可以回家等電子郵件寄來的正式通知啦！&lt;/p&gt;
+&lt;p&gt;通過考試後約一周就會收到通知信。我大概在考試完成的兩天後收到通知信，通知可以到&lt;a class=&#34;link&#34; href=&#34;https://www.certmetrics.com/cisco/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cisco追蹤系統&lt;/a&gt;上進行確認及電子證書的下載。通過測驗後也會有一次免費的紙本證書申請機會。&lt;/p&gt;
+&lt;p&gt;在&lt;a class=&#34;link&#34; href=&#34;https://www.certmetrics.com/cisco/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cisco追蹤系統&lt;/a&gt;上填寫紙本證書申請後，再過一個月就能收到從美國寄來的紙本證書了！&lt;/p&gt;
+&lt;h2 id=&#34;後話&#34;&gt;後話&lt;/h2&gt;
+&lt;p&gt;我是在去年4月份通過CCNA測驗的，距今也超過9個月了，是靠著模糊的記憶寫出這篇文章的。&lt;br&gt;
+&lt;del&gt;我預計在今年中去考CCNP Enterprise，希望我未來考證照時，會記得留下一些學習紀錄。&lt;/del&gt;&lt;br&gt;
+都3202年了還沒去考==&lt;/p&gt;
+&lt;p&gt;以上。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

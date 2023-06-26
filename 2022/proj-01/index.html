@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='一個讓你知道百鬼多久沒開台的奇怪網站。'>
+<title>百鬼開台了嗎 計時器</title>
+
+<link rel='canonical' href='https://blog.canaria.cc/2022/proj-01/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='百鬼開台了嗎 計時器'>
+<meta property='og:description' content='一個讓你知道百鬼多久沒開台的奇怪網站。'>
+<meta property='og:url' content='https://blog.canaria.cc/2022/proj-01/'>
+<meta property='og:site_name' content='かなりあ'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='Google App Script' /><meta property='article:tag' content='Youtube Data API' /><meta property='article:published_time' content='2022-03-22T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-03-22T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="百鬼開台了嗎 計時器">
+<meta name="twitter:description" content="一個讓你知道百鬼多久沒開台的奇怪網站。">
+    <link rel="shortcut icon" href="/favicon-32x32-next.png" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Q8EM3CPRB"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-9Q8EM3CPRB', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/-zY4HKd5_400x400_huaea65ec94f1419fa6be311ec47e299dd_38118_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">かなりあ</a></h1>
+            <h2 class="site-description">響け! この歌に乗せ 愛を送るよ</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/canaria3406'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/canaria3406'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://discord.com/users/242927802557399040'
+                        target="_blank"
+                        title="Discord"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-discord" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+  <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+  <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" />
+  <path d="M7 16.5c3.5 1 6.5 1 10 0" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目錄</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#前言">前言</a></li>
+    <li><a href="#demo">demo</a></li>
+    <li><a href="#youtube-data-api">Youtube Data API</a></li>
+    <li><a href="#dayjs">Day.js</a></li>
+    <li><a href="#分享按鈕">分享按鈕</a>
+      <ol>
+        <li><a href="#twitter">twitter</a></li>
+        <li><a href="#facebook">facebook</a></li>
+        <li><a href="#line">line</a></li>
+      </ol>
+    </li>
+    <li><a href="#後話">後話</a>
+      <ol>
+        <li><a href="#2023更新">2023更新</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%B0%88%E6%A1%88%E7%B4%80%E9%8C%84/" style="background-color: #df7988; color: #fff;">
+                專案紀錄
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/2022/proj-01/">百鬼開台了嗎 計時器</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            一個讓你知道百鬼多久沒開台的奇怪網站。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Mar 22, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    閱讀時間: 3 分鐘
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="前言">前言</h2>
+<p>寫下來留個紀錄。<br>
+月初某天在Discord群組內閒聊的時候，有人提到了百鬼不知道幾天不開台了。由於Youtube超過一段時間後，在<a class="link" href="https://www.youtube.com/channel/UC7fk0CB07ly8oSl0aqKkqFg/videos"  target="_blank" rel="noopener"
+    >影片頁面</a>上只會顯示該影片是在幾週或幾個月前上傳。除非點進最新的影片內，不然看不到確切的上傳日期。<br>
+這也給我一個想法，是不是可以用Youtube API直接抓到最新的影片上傳日期呢？因此在那幾天打APEX的零碎時間下完成了這個小專案(?)</p>
+<h2 id="demo">demo</h2>
+<p>懶得看code的人可以直接點網址，順便訂閱一下我家百鬼あやめ，按讚分享開啟小鈴鐺。</p>
+<ul>
+<li>百鬼計時器 demo：<a class="link" href="https://nakiri.canaria.cc/"  target="_blank" rel="noopener"
+    >nakiri.canaria.cc</a></li>
+<li>百鬼あやめ youtube：<a class="link" href="https://www.youtube.com/channel/UC7fk0CB07ly8oSl0aqKkqFg"  target="_blank" rel="noopener"
+    >https://www.youtube.com/channel/UC7fk0CB07ly8oSl0aqKkqFg</a></li>
+</ul>
+<h2 id="youtube-data-api">Youtube Data API</h2>
+<p>由於Google App Script內建Youtube Data API，只要在頁籤內新增服務即可直接使用，因此我這邊採用Google App Script作為我的後端資料操作。<br>
+Google開放每個專案每天約100次的搜尋請求，在小範圍內使用應該是沒問題的。<br>
+詳細的說明可以參考<a class="link" href="https://developers.google.com/youtube/v3/docs/search"  target="_blank" rel="noopener"
+    >官方文件</a>以及Google App Script的<a class="link" href="https://developers.google.com/youtube/v3/code_samples/apps-script"  target="_blank" rel="noopener"
+    >example code</a>，這邊只做簡單的介紹。</p>
+<p>youtube頻道網址後面那一串就是channelId。首先依照channelId搜尋該頻道依照上傳順序排列的最新一部影片。<br>
+回傳的東西雖然很多，但這次我們只需要三個部分，分別為：︁直播狀態、公開時間、影片ID。</p>
+<ul>
+<li>直播狀態(liveBroadcastContent)：共有三種可能的值，分別是預定開始直播(upcoming)、直播中(live)、毫無反應就是個影片(none)。</li>
+<li>公開時間(publishedAt)：回傳的時間格式會長這樣 <em>2022-03-11T15:33:11Z</em> ，後續可以交由Day.js處理。這邊要注意的是，假如頻道主在17:30發送直播預告，18:00開始直播，這邊回傳的值依然會是17:30。</li>
+<li>影片ID(videoId)：就是youtube的影片ID，這邊回傳時幫他補上了/embed/，方便接下來直接嵌入網頁。</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="kd">function</span> <span class="nx">doGet</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">cid</span> <span class="o">=</span><span class="s1">&#39;UC7fk0CB07ly8oSl0aqKkqFg&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="kd">var</span> <span class="nx">results</span> <span class="o">=</span> <span class="nx">YouTube</span><span class="p">.</span><span class="nx">Search</span><span class="p">.</span><span class="nx">list</span><span class="p">(</span><span class="s1">&#39;snippet&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">channelId</span><span class="o">:</span> <span class="nx">cid</span><span class="p">,</span> <span class="nx">type</span><span class="o">:</span> <span class="s1">&#39;video&#39;</span><span class="p">,</span> <span class="nx">order</span><span class="o">:</span> <span class="s1">&#39;date&#39;</span><span class="p">,</span> <span class="nx">maxResults</span><span class="o">:</span> <span class="mi">1</span><span class="p">});</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">  <span class="k">if</span> <span class="p">(</span><span class="nx">results</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">]){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">livestatus</span> <span class="o">=</span> <span class="nx">results</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">snippet</span><span class="p">.</span><span class="nx">liveBroadcastContent</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">publishtime</span> <span class="o">=</span> <span class="nx">results</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">snippet</span><span class="p">.</span><span class="nx">publishedAt</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">videoid</span> <span class="o">=</span> <span class="nx">results</span><span class="p">.</span><span class="nx">items</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">id</span><span class="p">.</span><span class="nx">videoId</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">ans</span> <span class="o">=</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">      <span class="s1">&#39;live&#39;</span><span class="o">:</span> <span class="nx">livestatus</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s1">&#39;pubt&#39;</span><span class="o">:</span> <span class="nx">publishtime</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">      <span class="s1">&#39;vidi&#39;</span><span class="o">:</span> <span class="s1">&#39;https://www.youtube.com/embed/&#39;</span> <span class="o">+</span> <span class="nx">videoid</span>
+</span></span><span class="line"><span class="cl">    <span class="p">};</span> 
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">ContentService</span><span class="p">.</span><span class="nx">createTextOutput</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="nx">ans</span><span class="p">)).</span><span class="nx">setMimeType</span><span class="p">(</span><span class="nx">ContentService</span><span class="p">.</span><span class="nx">MimeType</span><span class="p">.</span><span class="nx">JSON</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl">  <span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dayjs">Day.js</h2>
+<p>首先我們要判斷頻道的狀態是<strong>即將直播</strong>、<strong>直播中</strong>或<strong>沒開台</strong>。<br>
+如果是前兩者的話便將計時器隱藏，並嵌入直播影片。<br>
+再來透過Day.js，就算時間格式不同，我們也可以很簡單的算出現在和影片發布時間的間隔，在經過數值處理後就能得出：上次開台至今過了幾天幾時幾分幾秒了。<br>
+Day.js的功能還有很多，其他功能可以參考<a class="link" href="https://day.js.org/docs/en/installation/installation"  target="_blank" rel="noopener"
+    >官方文件</a>。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span><span class="lnt">46
+</span><span class="lnt">47
+</span><span class="lnt">48
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-javascript" data-lang="javascript"><span class="line"><span class="cl"><span class="nx">$</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;https://script.google.com/macros/s/nakiri-api/exec&#39;</span> <span class="p">,</span> <span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">live</span> <span class="o">==</span> <span class="s2">&#34;none&#34;</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="cm">/*顯示計時器*/</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">		<span class="kr">const</span> <span class="nx">startDate</span> <span class="o">=</span> <span class="nx">dayjs</span><span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">pubt</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">setDate</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">		<span class="nx">setInterval</span><span class="p">(()</span> <span class="p">=&gt;</span> <span class="nx">setDate</span><span class="p">(),</span> <span class="mi">1000</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">		<span class="cm">/*每1000毫秒刷新一次*/</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">		<span class="kd">function</span> <span class="nx">setDate</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="kd">let</span> <span class="nx">secs</span> <span class="o">=</span> <span class="nx">dayjs</span><span class="p">().</span><span class="nx">diff</span><span class="p">(</span><span class="nx">startDate</span><span class="p">,</span> <span class="s1">&#39;second&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="kd">let</span> <span class="nx">mins</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">secs</span> <span class="o">/</span> <span class="mi">60</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="kd">let</span> <span class="nx">hours</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">mins</span> <span class="o">/</span> <span class="mi">60</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="kd">let</span> <span class="nx">days</span> <span class="o">=</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nx">hours</span> <span class="o">/</span> <span class="mi">24</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">secs</span> <span class="o">=</span> <span class="nx">secs</span> <span class="o">-</span> <span class="p">(</span><span class="nx">mins</span> <span class="o">*</span> <span class="mi">60</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">mins</span> <span class="o">=</span> <span class="nx">mins</span> <span class="o">-</span> <span class="p">(</span><span class="nx">hours</span> <span class="o">*</span> <span class="mi">60</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">hours</span> <span class="o">=</span> <span class="nx">hours</span> <span class="o">-</span> <span class="p">(</span><span class="nx">days</span> <span class="o">*</span> <span class="mi">24</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="kd">let</span> <span class="nx">secs2</span> <span class="o">=</span> <span class="nx">secs</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="kd">let</span> <span class="nx">mins2</span> <span class="o">=</span> <span class="nx">mins</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="kd">let</span> <span class="nx">hours2</span> <span class="o">=</span> <span class="nx">hours</span><span class="p">.</span><span class="nx">toString</span><span class="p">().</span><span class="nx">padStart</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;0&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#day&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">days</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#hour&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">hours2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#min&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">mins2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#sec&#39;</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="nx">secs2</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">if</span> <span class="p">(</span><span class="nx">e</span><span class="p">.</span><span class="nx">live</span> <span class="o">==</span> <span class="s2">&#34;upcoming&#34;</span> <span class="o">||</span> <span class="nx">e</span><span class="p">.</span><span class="nx">live</span> <span class="o">==</span> <span class="s2">&#34;live&#34;</span><span class="p">){</span>
+</span></span><span class="line"><span class="cl">		
+</span></span><span class="line"><span class="cl">		<span class="cm">/*隱藏計時器*/</span>
+</span></span><span class="line"><span class="cl">        
+</span></span><span class="line"><span class="cl">		<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;&lt;iframe&gt;&#39;</span><span class="p">,</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">src</span><span class="o">:</span> <span class="nx">e</span><span class="p">.</span><span class="nx">vidi</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">id</span><span class="o">:</span>  <span class="s1">&#39;ytplayere&#39;</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">frameborder</span><span class="o">:</span> <span class="mi">0</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">			<span class="nx">scrolling</span><span class="o">:</span> <span class="s1">&#39;no&#39;</span>
+</span></span><span class="line"><span class="cl">		<span class="p">}).</span><span class="nx">appendTo</span><span class="p">(</span><span class="s1">&#39;#ytplayer&#39;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">	
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="k">else</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">		<span class="p">...</span>
+</span></span><span class="line"><span class="cl">	<span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">});</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="分享按鈕">分享按鈕</h2>
+<p>搭配了Font Awesome Icon和簡單的onclick事件來完成。<br>
+三個台灣常見的社群平台分享連結如下：</p>
+<h3 id="twitter">twitter</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">http://twitter.com/share?text={TEXT_MESSAGE}&amp;url={URL_MESSAGE}&amp;hashtags={TAG_MESSAGE}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="facebook">facebook</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&amp;sdk=joey&amp;u={URL_MESSAGE}&amp;display=popup&amp;ref=plugin&amp;src=share_button&amp;quote={TEXT_MESSAGE}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="line">line</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">https://line.me/R/msg/text/?{TEXT_MESSAGE}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="後話">後話</h2>
+<p>希望未來能有更多點子讓我可以練手，也希望我家百鬼あやめ可以多多開台。</p>
+<p>以上。</p>
+<h3 id="2023更新">2023更新</h3>
+<p>在今年二月我心血來潮，把我所有專案遺留的jQuery全部以VanillaJS重構了。<br>
+文內的code就不更新了，需要看source code的話可以到我的<a class="link" href="https://github.com/canaria3406/canaria-nakiri"  target="_blank" rel="noopener"
+    >Github</a>看。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/google-app-script/">Google App Script</a>
+        
+            <a href="/tags/youtube-data-api/">Youtube Data API</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2023 canaria
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

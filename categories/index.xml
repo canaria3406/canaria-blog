@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on かなりあ</title>
+        <link>https://blog.canaria.cc/categories/</link>
+        <description>Recent content in Categories on かなりあ</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Mon, 26 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.canaria.cc/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>其他</title>
+        <link>https://blog.canaria.cc/categories/%E5%85%B6%E4%BB%96/</link>
+        <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/categories/%E5%85%B6%E4%BB%96/</guid>
+        <description>&lt;img src="https://blog.canaria.cc/categories/%E5%85%B6%E4%BB%96/day.jpg" alt="Featured image of post 其他" /&gt;</description>
+        </item>
+        <item>
+        <title>專案紀錄</title>
+        <link>https://blog.canaria.cc/categories/%E5%B0%88%E6%A1%88%E7%B4%80%E9%8C%84/</link>
+        <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/categories/%E5%B0%88%E6%A1%88%E7%B4%80%E9%8C%84/</guid>
+        <description>&lt;img src="https://blog.canaria.cc/categories/%E5%B0%88%E6%A1%88%E7%B4%80%E9%8C%84/code.jpg" alt="Featured image of post 專案紀錄" /&gt;</description>
+        </item>
+        <item>
+        <title>證照心得</title>
+        <link>https://blog.canaria.cc/categories/%E8%AD%89%E7%85%A7%E5%BF%83%E5%BE%97/</link>
+        <pubDate>Sun, 06 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/categories/%E8%AD%89%E7%85%A7%E5%BF%83%E5%BE%97/</guid>
+        <description>&lt;img src="https://blog.canaria.cc/categories/%E8%AD%89%E7%85%A7%E5%BF%83%E5%BE%97/cert.jpg" alt="Featured image of post 證照心得" /&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

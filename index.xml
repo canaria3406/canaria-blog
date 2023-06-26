@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>かなりあ</title>
+        <link>https://blog.canaria.cc/</link>
+        <description>Recent content on かなりあ</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Mon, 26 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.canaria.cc/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>從hexo遷移到hugo 兼 近況更新</title>
+        <link>https://blog.canaria.cc/2023/oth-01/</link>
+        <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/2023/oth-01/</guid>
+        <description>&lt;h2 id=&#34;存活確認&#34;&gt;存活確認&lt;/h2&gt;
+&lt;p&gt;嘿對，我終於想到要更新這個blog了。&lt;br&gt;
+距離上次寫blog已經過了超過一年了，總覺得時間過得越來越快，但卻又感覺好多事情都沒做。當初希望每半年起碼考到一個證照，結果在我拿到JLPT N2之後就停滯至今，真的不能小瞧人類的惰性。&lt;br&gt;
+而我這段時間做了什麼呢？突然問的話&lt;del&gt;我也想不起來&lt;/del&gt;，只好借助科技的力量(aka記帳本)來回想了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通過 JLPT N2，之後應該會補心得&lt;/li&gt;
+&lt;li&gt;把電腦能換的零件全換了，只剩機殼沒換 (&lt;del&gt;如果我把機殼也換掉，那還是同一台電腦嗎&lt;/del&gt;)&lt;/li&gt;
+&lt;li&gt;為了改冷氣管線做了規模有點大的小型室內裝潢 (錢包：)&lt;/li&gt;
+&lt;li&gt;在github做了幾個小專案，拿了一些星星&lt;/li&gt;
+&lt;li&gt;在公司做了幾個內部小專案，不過沒有星星&lt;/li&gt;
+&lt;li&gt;考上了研究所&lt;/li&gt;
+&lt;li&gt;買了新的筆電+手機+螢幕+鍵盤&lt;/li&gt;
+&lt;li&gt;確診，最後有成功存活&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;未來可能會更忙碌了，不過希望起碼能一個月產出一篇文章，為未來做好準備(?)&lt;/p&gt;
+&lt;h2 id=&#34;網站遷移&#34;&gt;網站遷移&lt;/h2&gt;
+&lt;p&gt;接下來就是本文原來的主題，從Hexo遷移到Hugo的事情啦&lt;/p&gt;
+&lt;h3 id=&#34;緣起&#34;&gt;緣起&lt;/h3&gt;
+&lt;p&gt;如上一段所說，這段時間我把電腦能換的零件全換了，而免不了的遇到的電腦重灌的問題。&lt;br&gt;
+在重灌後所有軟體都需要重新安裝及配置，但在我嘗試著復原我的blog時，我發現我竟然只備份到文章的部分，其他的部分都需要重新設定。&lt;br&gt;
+既然要重構，我不如來嘗試看看其他主題或框架吧？而就成為了今天的楔子啦。&lt;/p&gt;
+&lt;h3 id=&#34;安裝&#34;&gt;安裝&lt;/h3&gt;
+&lt;p&gt;因為我使用windows環境，因此選用Chocolatey進行安裝。(Chocolatey可以在安裝Node.js時一併安裝)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;choco install hugo-extended
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;其他環境下的安裝方式可以參考&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/installation/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方說明&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置&#34;&gt;配置&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new site quickstart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;文章都放在content資料夾裡面，有用過Hexo的應該都滿好上手的。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;可以到 &lt;code&gt;http://localhost:1313/&lt;/code&gt; 預覽文章~&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;確認沒問題後再將生成的靜態檔案push上去就可以了~&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>百鬼開台了嗎 計時器</title>
+        <link>https://blog.canaria.cc/2022/proj-01/</link>
+        <pubDate>Tue, 22 Mar 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/2022/proj-01/</guid>
+        <description>&lt;h2 id=&#34;前言&#34;&gt;前言&lt;/h2&gt;
+&lt;p&gt;寫下來留個紀錄。&lt;br&gt;
+月初某天在Discord群組內閒聊的時候，有人提到了百鬼不知道幾天不開台了。由於Youtube超過一段時間後，在&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/channel/UC7fk0CB07ly8oSl0aqKkqFg/videos&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;影片頁面&lt;/a&gt;上只會顯示該影片是在幾週或幾個月前上傳。除非點進最新的影片內，不然看不到確切的上傳日期。&lt;br&gt;
+這也給我一個想法，是不是可以用Youtube API直接抓到最新的影片上傳日期呢？因此在那幾天打APEX的零碎時間下完成了這個小專案(?)&lt;/p&gt;
+&lt;h2 id=&#34;demo&#34;&gt;demo&lt;/h2&gt;
+&lt;p&gt;懶得看code的人可以直接點網址，順便訂閱一下我家百鬼あやめ，按讚分享開啟小鈴鐺。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;百鬼計時器 demo：&lt;a class=&#34;link&#34; href=&#34;https://nakiri.canaria.cc/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;nakiri.canaria.cc&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;百鬼あやめ youtube：&lt;a class=&#34;link&#34; href=&#34;https://www.youtube.com/channel/UC7fk0CB07ly8oSl0aqKkqFg&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;https://www.youtube.com/channel/UC7fk0CB07ly8oSl0aqKkqFg&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;youtube-data-api&#34;&gt;Youtube Data API&lt;/h2&gt;
+&lt;p&gt;由於Google App Script內建Youtube Data API，只要在頁籤內新增服務即可直接使用，因此我這邊採用Google App Script作為我的後端資料操作。&lt;br&gt;
+Google開放每個專案每天約100次的搜尋請求，在小範圍內使用應該是沒問題的。&lt;br&gt;
+詳細的說明可以參考&lt;a class=&#34;link&#34; href=&#34;https://developers.google.com/youtube/v3/docs/search&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方文件&lt;/a&gt;以及Google App Script的&lt;a class=&#34;link&#34; href=&#34;https://developers.google.com/youtube/v3/code_samples/apps-script&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;example code&lt;/a&gt;，這邊只做簡單的介紹。&lt;/p&gt;
+&lt;p&gt;youtube頻道網址後面那一串就是channelId。首先依照channelId搜尋該頻道依照上傳順序排列的最新一部影片。&lt;br&gt;
+回傳的東西雖然很多，但這次我們只需要三個部分，分別為：︁直播狀態、公開時間、影片ID。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;直播狀態(liveBroadcastContent)：共有三種可能的值，分別是預定開始直播(upcoming)、直播中(live)、毫無反應就是個影片(none)。&lt;/li&gt;
+&lt;li&gt;公開時間(publishedAt)：回傳的時間格式會長這樣 &lt;em&gt;2022-03-11T15:33:11Z&lt;/em&gt; ，後續可以交由Day.js處理。這邊要注意的是，假如頻道主在17:30發送直播預告，18:00開始直播，這邊回傳的值依然會是17:30。&lt;/li&gt;
+&lt;li&gt;影片ID(videoId)：就是youtube的影片ID，這邊回傳時幫他補上了/embed/，方便接下來直接嵌入網頁。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;doGet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;cid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;UC7fk0CB07ly8oSl0aqKkqFg&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;results&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;YouTube&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;Search&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;list&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;snippet&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;channelId&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;cid&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;type&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;video&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;order&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;date&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;maxResults&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;results&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;]){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;livestatus&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;results&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;snippet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;liveBroadcastContent&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;publishtime&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;results&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;snippet&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;publishedAt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;videoid&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;results&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;items&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;[&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;].&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;videoId&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ans&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s1&#34;&gt;&amp;#39;live&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;livestatus&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s1&#34;&gt;&amp;#39;pubt&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;publishtime&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;      &lt;span class=&#34;s1&#34;&gt;&amp;#39;vidi&amp;#39;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;https://www.youtube.com/embed/&amp;#39;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;videoid&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;p&#34;&gt;};&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;ContentService&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;createTextOutput&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;stringify&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ans&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;setMimeType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;ContentService&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;MimeType&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;JSON&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;    &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;  &lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;dayjs&#34;&gt;Day.js&lt;/h2&gt;
+&lt;p&gt;首先我們要判斷頻道的狀態是&lt;strong&gt;即將直播&lt;/strong&gt;、&lt;strong&gt;直播中&lt;/strong&gt;或&lt;strong&gt;沒開台&lt;/strong&gt;。&lt;br&gt;
+如果是前兩者的話便將計時器隱藏，並嵌入直播影片。&lt;br&gt;
+再來透過Day.js，就算時間格式不同，我們也可以很簡單的算出現在和影片發布時間的間隔，在經過數值處理後就能得出：上次開台至今過了幾天幾時幾分幾秒了。&lt;br&gt;
+Day.js的功能還有很多，其他功能可以參考&lt;a class=&#34;link&#34; href=&#34;https://day.js.org/docs/en/installation/installation&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方文件&lt;/a&gt;。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt; 1
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 2
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 3
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 4
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 5
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 6
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 7
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 8
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt; 9
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;10
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;11
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;12
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;13
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;14
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;15
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;16
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;17
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;18
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;19
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;20
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;21
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;22
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;23
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;24
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;25
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;26
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;27
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;28
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;29
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;30
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;31
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;32
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;33
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;34
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;35
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;36
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;37
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;38
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;39
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;40
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;41
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;42
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;43
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;44
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;45
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;46
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;47
+&lt;/span&gt;&lt;span class=&#34;lnt&#34;&gt;48
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;https://script.google.com/macros/s/nakiri-api/exec&amp;#39;&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;live&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;none&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;cm&#34;&gt;/*顯示計時器*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;kr&#34;&gt;const&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;startDate&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dayjs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;pubt&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nx&#34;&gt;setDate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nx&#34;&gt;setInterval&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;=&amp;gt;&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;setDate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(),&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1000&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;cm&#34;&gt;/*每1000毫秒刷新一次*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;setDate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;()&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;secs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;dayjs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;diff&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;startDate&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;second&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;floor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;secs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;60&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;floor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;60&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;days&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Math&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;floor&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;/&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;secs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;secs&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;60&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;mins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mins&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;60&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;days&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;24&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;secs2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;secs&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mins2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;mins&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;kd&#34;&gt;let&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hours2&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;hours&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;toString&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;().&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;padStart&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;mi&#34;&gt;2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;0&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;#day&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;days&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;#hour&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;hours2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;#min&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;mins2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;#sec&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;text&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;secs2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;live&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;upcoming&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;||&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;live&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;==&lt;/span&gt; &lt;span class=&#34;s2&#34;&gt;&amp;#34;live&amp;#34;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;){&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;cm&#34;&gt;/*隱藏計時器*/&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;        
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;nx&#34;&gt;$&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;&amp;lt;iframe&amp;gt;&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;src&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;e&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;vidi&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;id&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt;  &lt;span class=&#34;s1&#34;&gt;&amp;#39;ytplayere&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;frameborder&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;0&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;			&lt;span class=&#34;nx&#34;&gt;scrolling&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;:&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;no&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;p&#34;&gt;}).&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;appendTo&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s1&#34;&gt;&amp;#39;#ytplayer&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;);&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;		&lt;span class=&#34;p&#34;&gt;...&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;	&lt;span class=&#34;p&#34;&gt;}&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;&lt;span class=&#34;p&#34;&gt;});&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;分享按鈕&#34;&gt;分享按鈕&lt;/h2&gt;
+&lt;p&gt;搭配了Font Awesome Icon和簡單的onclick事件來完成。&lt;br&gt;
+三個台灣常見的社群平台分享連結如下：&lt;/p&gt;
+&lt;h3 id=&#34;twitter&#34;&gt;twitter&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;http://twitter.com/share?text={TEXT_MESSAGE}&amp;amp;url={URL_MESSAGE}&amp;amp;hashtags={TAG_MESSAGE}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;facebook&#34;&gt;facebook&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://www.facebook.com/sharer/sharer.php?kid_directed_site=0&amp;amp;sdk=joey&amp;amp;u={URL_MESSAGE}&amp;amp;display=popup&amp;amp;ref=plugin&amp;amp;src=share_button&amp;amp;quote={TEXT_MESSAGE}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h3 id=&#34;line&#34;&gt;line&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;https://line.me/R/msg/text/?{TEXT_MESSAGE}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;h2 id=&#34;後話&#34;&gt;後話&lt;/h2&gt;
+&lt;p&gt;希望未來能有更多點子讓我可以練手，也希望我家百鬼あやめ可以多多開台。&lt;/p&gt;
+&lt;p&gt;以上。&lt;/p&gt;
+&lt;h3 id=&#34;2023更新&#34;&gt;2023更新&lt;/h3&gt;
+&lt;p&gt;在今年二月我心血來潮，把我所有專案遺留的jQuery全部以VanillaJS重構了。&lt;br&gt;
+文內的code就不更新了，需要看source code的話可以到我的&lt;a class=&#34;link&#34; href=&#34;https://github.com/canaria3406/canaria-nakiri&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Github&lt;/a&gt;看。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>About</title>
+        <link>https://blog.canaria.cc/about/</link>
+        <pubDate>Sun, 20 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/about/</guid>
+        <description>&lt;p&gt;Hi there, I&amp;rsquo;m canaria, from Taiwan!&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Site Reliability Engineer.&lt;/li&gt;
+&lt;li&gt;Master&amp;rsquo;s student at National Yang Ming Chiao Tung University (NYCU).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Since I&amp;rsquo;m not sure what to say, let the music speak for me.
+&lt;div class=&#34;video-wrapper&#34;&gt;
+    &lt;iframe loading=&#34;lazy&#34; 
+            src=&#34;https://www.youtube.com/embed/Uns56HtuejM&#34; 
+            allowfullscreen 
+            title=&#34;YouTube Video&#34;
+    &gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Cisco CCNA (200-301) 考試心得</title>
+        <link>https://blog.canaria.cc/2022/cert-02/</link>
+        <pubDate>Sun, 06 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/2022/cert-02/</guid>
+        <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
+&lt;p&gt;進入公司當社畜後，因為公司業務的關係，我發現大量同事持有各式的網路證照，而其中又以&lt;a class=&#34;link&#34; href=&#34;https://www.cisco.com/c/en/us/training-events/training-certifications/certifications.html&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cisco&lt;/a&gt;的為大宗。一方面想證明自己的實力，一方面公司又對相關證照有全額補助(&lt;del&gt;這才是重點&lt;/del&gt;)，所以就決定來考考看了。&lt;/p&gt;
+&lt;h2 id=&#34;測驗資訊&#34;&gt;測驗資訊&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;考試費用：美金300元 (約合新台幣8500元)&lt;/li&gt;
+&lt;li&gt;證照費用：第一次申請紙本證書&lt;strong&gt;免費&lt;/strong&gt;，隨附電子證書 (若需補發紙本證書則須美金15元)&lt;/li&gt;
+&lt;li&gt;考試時間：於&lt;a class=&#34;link&#34; href=&#34;https://home.pearsonvue.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pearson VUE&lt;/a&gt;官網報名時選擇之考試時間&lt;/li&gt;
+&lt;li&gt;考試地點：&lt;a class=&#34;link&#34; href=&#34;https://www.uuu.com.tw/TestCenter/Vue&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;恆逸教育&lt;/a&gt;、&lt;a class=&#34;link&#34; href=&#34;https://www.pcschool.com.tw/branch-school&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;巨匠電腦&lt;/a&gt;等考場，以&lt;a class=&#34;link&#34; href=&#34;https://home.pearsonvue.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pearson VUE&lt;/a&gt;官網公布為準&lt;/li&gt;
+&lt;li&gt;攜帶物品：&lt;strong&gt;身分證&lt;/strong&gt; (查驗用)、&lt;strong&gt;印有英文姓名之信用卡&lt;/strong&gt; (查驗用)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;cisco-ccna-200-301&#34;&gt;Cisco CCNA (200-301)&lt;/h2&gt;
+&lt;p&gt;CCNA，全名Cisco Certified Network Associate，是cisco的網路認證，證明工程師已掌握網路的基礎知識，並可以進行路由器的安裝、配置和操作。(棒讀)&lt;br&gt;
+除非考場有其他安排，不然幾乎每個上班日都可以找到考場考試，考試時間的安排相當彈性。&lt;/p&gt;
+&lt;p&gt;cisco認證每隔一段時間就會改版，考試代碼也會隨之更動，200-301代表的正是&lt;strong&gt;考試代碼&lt;/strong&gt;。改版後的教材和題庫都會發生變化，練習時要注意不要拿到舊版的教材或題庫，避免在實際考試時遇到的有所出入。&lt;br&gt;
+&lt;img src=&#34;https://www.uuu.com.tw/Public/images/course/Cisco/career-path.jpg&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;Cisco Certified&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;考前準備&#34;&gt;考前準備&lt;/h2&gt;
+&lt;p&gt;CCNA的考試分為選擇題和拖圖題。選擇題有可能是單選或多選，托圖題則是將左邊的文字方塊拖動到右邊放開即可，非常直覺。&lt;br&gt;
+考試我主要靠公司內部的教育訓練文件、練習考古題，然後將旗標出版社的&lt;a class=&#34;link&#34; href=&#34;https://www.books.com.tw/products/0010869117&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;CCNA Certification Study Guide&lt;/a&gt;譯本作為參考書來準備。雖然只看考古題的話也能通過，不過建議照著書本的學習軌跡走，收穫會更多。&lt;br&gt;
+&lt;img src=&#34;https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/086/91/0010869117.jpg&amp;amp;v=5f4639b1&amp;amp;w=348&amp;amp;h=348&#34;
+	
+	
+	
+	loading=&#34;lazy&#34;
+	
+		alt=&#34;CCNA Certification Study Guide&#34;
+	
+	
+&gt;&lt;/p&gt;
+&lt;h2 id=&#34;考試流程及證照請領&#34;&gt;考試流程及證照請領&lt;/h2&gt;
+&lt;p&gt;報名流程可以參考&lt;a class=&#34;link&#34; href=&#34;https://www.uuu.com.tw/TestCenter/Steps&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;恆逸考試中心的教學&lt;/a&gt;到&lt;a class=&#34;link&#34; href=&#34;https://home.pearsonvue.com/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;Pearson VUE&lt;/a&gt;官網報名。&lt;br&gt;
+如果需要開立發票才能報帳的話，則需要由考試中心代為報名(恆逸或巨匠都可以)，而發票則是在考試後向考試中心索取。&lt;br&gt;
+報名後請在考試當天的指定時段到考場(&lt;strong&gt;建議提早30分鐘&lt;/strong&gt;)，方便工作人員進行作業，也助於緩和緊張情緒。&lt;/p&gt;
+&lt;p&gt;我選擇的考場是恆逸考試中心，在考場櫃台報到後，工作人員會跟你核對&lt;strong&gt;身分證&lt;/strong&gt;、&lt;strong&gt;印有英文姓名之信用卡&lt;/strong&gt;，並拍攝大頭照以確認身分。所有流程完成後工作人員就會帶你進入考場。所有考試一樣，需要將隨身物品放到置物區，考場會提供小白板和白板筆作為計算用途。&lt;br&gt;
+在考前會有一個問卷調查，詢問你的教育程度、公司資訊、距離考場的距離等。這邊要注意的是，其中&lt;strong&gt;你是否滿18歲&lt;/strong&gt;和&lt;strong&gt;你是否同意cisco相關規章&lt;/strong&gt;請一定要&lt;strong&gt;選擇YES&lt;/strong&gt;，否則考試可能會中斷(據說)。&lt;/p&gt;
+&lt;p&gt;CCNA的考試時間共170分鐘，考題約100題，及格門檻為825分/1000分。&lt;br&gt;
+需要注意的是，CCNA考試&lt;strong&gt;不能返回上一題修改答案&lt;/strong&gt;，請&lt;strong&gt;確認答案沒有選錯再點NEXT送出&lt;/strong&gt;，也請注意不要連點兩下NEXT跳題。&lt;br&gt;
+考試完成後會直接在螢幕上顯示是否通過，通過後工作人員會把成績單印出來給你(封面是剛才拍的超醜大頭照)，收好後就可以回家等電子郵件寄來的正式通知啦！&lt;/p&gt;
+&lt;p&gt;通過考試後約一周就會收到通知信。我大概在考試完成的兩天後收到通知信，通知可以到&lt;a class=&#34;link&#34; href=&#34;https://www.certmetrics.com/cisco/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cisco追蹤系統&lt;/a&gt;上進行確認及電子證書的下載。通過測驗後也會有一次免費的紙本證書申請機會。&lt;/p&gt;
+&lt;p&gt;在&lt;a class=&#34;link&#34; href=&#34;https://www.certmetrics.com/cisco/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;cisco追蹤系統&lt;/a&gt;上填寫紙本證書申請後，再過一個月就能收到從美國寄來的紙本證書了！&lt;/p&gt;
+&lt;h2 id=&#34;後話&#34;&gt;後話&lt;/h2&gt;
+&lt;p&gt;我是在去年4月份通過CCNA測驗的，距今也超過9個月了，是靠著模糊的記憶寫出這篇文章的。&lt;br&gt;
+&lt;del&gt;我預計在今年中去考CCNP Enterprise，希望我未來考證照時，會記得留下一些學習紀錄。&lt;/del&gt;&lt;br&gt;
+都3202年了還沒去考==&lt;/p&gt;
+&lt;p&gt;以上。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>業餘無線電人員執照 考試心得</title>
+        <link>https://blog.canaria.cc/2022/cert-01/</link>
+        <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/2022/cert-01/</guid>
+        <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
+&lt;p&gt;大學時的我百般無聊翻著wiki的時候，發現了&lt;a class=&#34;link&#34; href=&#34;https://dic.pixiv.net/a/%E5%AE%89%E9%83%A8%E8%8F%9C%E3%80%85&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;安部菜々&lt;/a&gt;的CV&lt;a class=&#34;link&#34; href=&#34;https://ja.wikipedia.org/wiki/%E4%B8%89%E5%AE%85%E9%BA%BB%E7%90%86%E6%81%B5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;三宅麻理恵&lt;/a&gt;擁有&lt;a class=&#34;link&#34; href=&#34;https://ja.wikipedia.org/wiki/%E4%B8%89%E5%AE%85%E9%BA%BB%E7%90%86%E6%81%B5#%E4%BA%BA%E7%89%A9%E3%83%BB%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;業餘無線電人員執照&lt;/a&gt;。在蒐集了一下資訊並稍微讀過題庫後，我就直接跑去考試了，前後不到一天，&lt;del&gt;真佩服我當時的行動力&lt;/del&gt;。&lt;br&gt;
+嘿對，原因就這樣，沒什麼其他原因，就是大學時的一時衝動(?)&lt;/p&gt;
+&lt;h2 id=&#34;測驗資訊&#34;&gt;測驗資訊&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;考試費用：新台幣 200元&lt;/li&gt;
+&lt;li&gt;證照費用：新台幣 500元&lt;/li&gt;
+&lt;li&gt;考試時間：每&lt;strong&gt;週一或週五&lt;/strong&gt;9:00~11:20或14:00~16:20 &lt;strong&gt;隨到隨考&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;考試地點：NCC &lt;a class=&#34;link&#34; href=&#34;https://goo.gl/maps/P1u9ty2u8BsdhF2o9&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;北區&lt;/a&gt; / &lt;a class=&#34;link&#34; href=&#34;https://goo.gl/maps/UcojcURu64BpMvAp6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;中區&lt;/a&gt; / &lt;a class=&#34;link&#34; href=&#34;https://goo.gl/maps/PjpsQkjyCA2k1xx26&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;南區&lt;/a&gt; 監理處&lt;/li&gt;
+&lt;li&gt;攜帶物品：&lt;strong&gt;身分證&lt;/strong&gt; (查驗用)、&lt;strong&gt;1吋大頭貼&lt;/strong&gt; (證照製作用)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;業餘無線電人員執照&#34;&gt;業餘無線電人員執照&lt;/h2&gt;
+&lt;p&gt;業餘無線電人員執照共&lt;strong&gt;分為三等&lt;/strong&gt;，三等為初級、二等為進階、一等為高級。&lt;br&gt;
+三等及二等的題庫約600題、一等的題庫約900題。&lt;/p&gt;
+&lt;p&gt;執照&lt;strong&gt;不得跳級考取&lt;/strong&gt;，須通過三等後才能考取二等、需取得二等資格一段時間後才能考取一等。&lt;/p&gt;
+&lt;p&gt;根據我當年考試的規定，二等以上的業餘無線電人員執照需加考術科測驗，也就是&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;摩斯電碼&lt;/a&gt;的聽寫。在聽完&lt;a class=&#34;link&#34; href=&#34;https://freqdbo.ncc.gov.tw/exam/application/exam/examc07.aspx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;練習題庫&lt;/a&gt;的模擬試題後我決定直接放棄，因此當時我只考了三等。&lt;br&gt;
+不過摩斯電碼的術科測驗在109年改版的時候被拿掉了，目前無論等級都只需要考筆試測驗即可。因為三等及二等題庫的相似度很高，建議現在要考的人&lt;strong&gt;連續進行三等及二等的筆試，並直接請領二等的執照&lt;/strong&gt;比較划算。&lt;/p&gt;
+&lt;h2 id=&#34;考前準備及考試流程&#34;&gt;考前準備及考試流程&lt;/h2&gt;
+&lt;p&gt;把NCC公布的 &lt;a class=&#34;link&#34; href=&#34;https://www.ncc.gov.tw/chinese/service_detail.aspx?sn=1084&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;考試題庫&lt;/strong&gt;&lt;/a&gt; 看一看，做一下NCC的 &lt;a class=&#34;link&#34; href=&#34;https://freqdbo.ncc.gov.tw/exam/application/exam/examc07.aspx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;模擬測試&lt;/strong&gt;&lt;/a&gt; 後我就直接去考了。&lt;br&gt;
+考題分為兩部分，前半為台灣的無線電相關法律規章，後半是相關的電磁學技術及原理等，都是&lt;strong&gt;四選一的選擇題&lt;/strong&gt;。因為正式考題就是從題庫裡面抽的，所以只要題庫有看熟基本上都不會有問題。&lt;del&gt;有興趣的人也可以翻一下大學的電磁學課本&lt;/del&gt;。&lt;/p&gt;
+&lt;p&gt;考試流程很簡單，跟NCC監理處櫃台說要考試後，現場填寫報名表、查驗身分證並繳交考試費後就可以考試了。跟考駕照很類似，雖然規定的考試時間有40分鐘，不過由於考題不多，大概10分鐘以內就能答完了，&lt;strong&gt;答完可以先行離開&lt;/strong&gt;找工作人員。如果要接著考二等的話，考完請重複上面的步驟(填寫報名表、查驗身分證並繳交考試費)進行二等的考試。&lt;/p&gt;
+&lt;p&gt;考試結束後回到櫃台，繳交1吋大頭貼、查驗身分證並繳交規費後，工作人員就會現場幫你製作熱騰騰的(用護貝機護貝的)業餘無線電人員執照了。&lt;/p&gt;
+&lt;h2 id=&#34;後話&#34;&gt;後話&lt;/h2&gt;
+&lt;p&gt;業餘無線電人員執照是我大學考取的第一張證照，也是我畢業後像白紙一樣的履歷上，證照欄中的唯一一張證照。面試官和我看到wiki時一樣，對這張證照充滿了好奇心(畢竟真的很少見)。&lt;br&gt;
+多虧如此在面試時聊得滿開心的，最後也順利錄取進現在的公司。雖然除了面試時拿來聊天外，目前這張證照對我來說沒太大的用處。但在工作一陣子，準備開始考其他證照時，這個經驗也給了不少動力。&lt;/p&gt;
+&lt;p&gt;至於到底需不需要考證照，每個人都有每個人的看法。這邊推薦一篇文章：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://medium.com/blacksecurity/benefits-of-certifications-ec8880639df8&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;我真的需要考證照嗎? 考證照對就業找工作會有幫助嗎? 一篇考證照的反思與效益分析&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以上。&lt;/p&gt;
+</description>
+        </item>
+        <item>
+        <title>Archives</title>
+        <link>https://blog.canaria.cc/archives/</link>
+        <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>Search</title>
+        <link>https://blog.canaria.cc/search/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/search/</guid>
+        <description></description>
+        </item>
+        
+    </channel>
+</rss>

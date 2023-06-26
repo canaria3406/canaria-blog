@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>其他 on かなりあ</title>
+        <link>https://blog.canaria.cc/categories/%E5%85%B6%E4%BB%96/</link>
+        <description>Recent content in 其他 on かなりあ</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Mon, 26 Jun 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.canaria.cc/categories/%E5%85%B6%E4%BB%96/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>從hexo遷移到hugo 兼 近況更新</title>
+        <link>https://blog.canaria.cc/2023/oth-01/</link>
+        <pubDate>Mon, 26 Jun 2023 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/2023/oth-01/</guid>
+        <description>&lt;h2 id=&#34;存活確認&#34;&gt;存活確認&lt;/h2&gt;
+&lt;p&gt;嘿對，我終於想到要更新這個blog了。&lt;br&gt;
+距離上次寫blog已經過了超過一年了，總覺得時間過得越來越快，但卻又感覺好多事情都沒做。當初希望每半年起碼考到一個證照，結果在我拿到JLPT N2之後就停滯至今，真的不能小瞧人類的惰性。&lt;br&gt;
+而我這段時間做了什麼呢？突然問的話&lt;del&gt;我也想不起來&lt;/del&gt;，只好借助科技的力量(aka記帳本)來回想了：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;通過 JLPT N2，之後應該會補心得&lt;/li&gt;
+&lt;li&gt;把電腦能換的零件全換了，只剩機殼沒換 (&lt;del&gt;如果我把機殼也換掉，那還是同一台電腦嗎&lt;/del&gt;)&lt;/li&gt;
+&lt;li&gt;為了改冷氣管線做了規模有點大的小型室內裝潢 (錢包：)&lt;/li&gt;
+&lt;li&gt;在github做了幾個小專案，拿了一些星星&lt;/li&gt;
+&lt;li&gt;在公司做了幾個內部小專案，不過沒有星星&lt;/li&gt;
+&lt;li&gt;考上了研究所&lt;/li&gt;
+&lt;li&gt;買了新的筆電+手機+螢幕+鍵盤&lt;/li&gt;
+&lt;li&gt;確診，最後有成功存活&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;未來可能會更忙碌了，不過希望起碼能一個月產出一篇文章，為未來做好準備(?)&lt;/p&gt;
+&lt;h2 id=&#34;網站遷移&#34;&gt;網站遷移&lt;/h2&gt;
+&lt;p&gt;接下來就是本文原來的主題，從Hexo遷移到Hugo的事情啦&lt;/p&gt;
+&lt;h3 id=&#34;緣起&#34;&gt;緣起&lt;/h3&gt;
+&lt;p&gt;如上一段所說，這段時間我把電腦能換的零件全換了，而免不了的遇到的電腦重灌的問題。&lt;br&gt;
+在重灌後所有軟體都需要重新安裝及配置，但在我嘗試著復原我的blog時，我發現我竟然只備份到文章的部分，其他的部分都需要重新設定。&lt;br&gt;
+既然要重構，我不如來嘗試看看其他主題或框架吧？而就成為了今天的楔子啦。&lt;/p&gt;
+&lt;h3 id=&#34;安裝&#34;&gt;安裝&lt;/h3&gt;
+&lt;p&gt;因為我使用windows環境，因此選用Chocolatey進行安裝。(Chocolatey可以在安裝Node.js時一併安裝)&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;choco install hugo-extended
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;其他環境下的安裝方式可以參考&lt;a class=&#34;link&#34; href=&#34;https://gohugo.io/installation/&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;官方說明&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id=&#34;配置&#34;&gt;配置&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo new site quickstart
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;文章都放在content資料夾裡面，有用過Hexo的應該都滿好上手的。&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo server
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;可以到 &lt;code&gt;http://localhost:1313/&lt;/code&gt; 預覽文章~&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;div class=&#34;chroma&#34;&gt;
+&lt;table class=&#34;lntable&#34;&gt;&lt;tr&gt;&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code&gt;&lt;span class=&#34;lnt&#34;&gt;1
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class=&#34;lntd&#34;&gt;
+&lt;pre tabindex=&#34;0&#34; class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-fallback&#34; data-lang=&#34;fallback&#34;&gt;&lt;span class=&#34;line&#34;&gt;&lt;span class=&#34;cl&#34;&gt;hugo
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;&lt;p&gt;確認沒問題後再將生成的靜態檔案push上去就可以了~&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

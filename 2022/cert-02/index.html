@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="zh-tw" dir="ltr">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='就是那個大家都知道的CCNA。'>
+<title>Cisco CCNA (200-301) 考試心得</title>
+
+<link rel='canonical' href='https://blog.canaria.cc/2022/cert-02/'>
+
+<link rel="stylesheet" href="/scss/style.min.8191399262444ab68b72a18c97392f5349be20a1615d77445be51e974c144cff.css"><meta property='og:title' content='Cisco CCNA (200-301) 考試心得'>
+<meta property='og:description' content='就是那個大家都知道的CCNA。'>
+<meta property='og:url' content='https://blog.canaria.cc/2022/cert-02/'>
+<meta property='og:site_name' content='かなりあ'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='cisco' /><meta property='article:tag' content='CCNA' /><meta property='article:published_time' content='2022-02-06T00:00:00&#43;00:00'/><meta property='article:modified_time' content='2022-02-06T00:00:00&#43;00:00'/>
+<meta name="twitter:title" content="Cisco CCNA (200-301) 考試心得">
+<meta name="twitter:description" content="就是那個大家都知道的CCNA。">
+    <link rel="shortcut icon" href="/favicon-32x32-next.png" />
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-9Q8EM3CPRB"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-9Q8EM3CPRB', { 'anonymize_ip': false });
+}
+</script>
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切換選單">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/-zY4HKd5_400x400_huaea65ec94f1419fa6be311ec47e299dd_38118_300x0_resize_q75_box.jpg" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">かなりあ</a></h1>
+            <h2 class="site-description">響け! この歌に乗せ 愛を送るよ</h2>
+        </div>
+    </header><ol class="social-menu">
+            
+                <li>
+                    <a 
+                        href='https://twitter.com/canaria3406'
+                        target="_blank"
+                        title="Twitter"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-twitter" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M22 4.01c-1 .49 -1.98 .689 -3 .99c-1.121 -1.265 -2.783 -1.335 -4.38 -.737s-2.643 2.06 -2.62 3.737v1c-3.245 .083 -6.135 -1.395 -8 -4c0 0 -4.182 7.433 4 11c-1.872 1.247 -3.739 2.088 -6 2c3.308 1.803 6.913 2.423 10.034 1.517c3.58 -1.04 6.522 -3.723 7.651 -7.742a13.84 13.84 0 0 0 .497 -3.753c-.002 -.249 1.51 -2.772 1.818 -4.013z" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://github.com/canaria3406'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+                <li>
+                    <a 
+                        href='https://discord.com/users/242927802557399040'
+                        target="_blank"
+                        title="Discord"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-discord" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M8 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+  <path d="M14 12a1 1 0 1 0 2 0a1 1 0 0 0 -2 0" />
+  <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-.972 1.923a11.913 11.913 0 0 0 -4.053 0l-.975 -1.923c-1.5 .16 -3.043 .485 -4.5 1.5c-2 5.667 -2.167 9.833 -1.5 11.5c.667 1.333 2 3 3.5 3c.5 0 2 -2 2 -3" />
+  <path d="M7 16.5c3.5 1 6.5 1 10 0" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/about/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+
+        <div class="menu-bottom-section">
+            
+            
+                <li id="dark-mode-toggle">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                    <span>Dark Mode</span>
+                </li>
+            
+        </div>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目錄</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#緣起">緣起</a></li>
+    <li><a href="#測驗資訊">測驗資訊</a></li>
+    <li><a href="#cisco-ccna-200-301">Cisco CCNA (200-301)</a></li>
+    <li><a href="#考前準備">考前準備</a></li>
+    <li><a href="#考試流程及證照請領">考試流程及證照請領</a></li>
+    <li><a href="#後話">後話</a></li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E8%AD%89%E7%85%A7%E5%BF%83%E5%BE%97/" style="background-color: #0177b8; color: #fff;">
+                證照心得
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/2022/cert-02/">Cisco CCNA (200-301) 考試心得</a>
+        </h2>
+    
+        
+        <h3 class="article-subtitle">
+            就是那個大家都知道的CCNA。
+        </h3>
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published">Feb 06, 2022</time>
+            </div>
+        
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    閱讀時間: 3 分鐘
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h2 id="緣起">緣起</h2>
+<p>進入公司當社畜後，因為公司業務的關係，我發現大量同事持有各式的網路證照，而其中又以<a class="link" href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications.html"  target="_blank" rel="noopener"
+    >cisco</a>的為大宗。一方面想證明自己的實力，一方面公司又對相關證照有全額補助(<del>這才是重點</del>)，所以就決定來考考看了。</p>
+<h2 id="測驗資訊">測驗資訊</h2>
+<ul>
+<li>考試費用：美金300元 (約合新台幣8500元)</li>
+<li>證照費用：第一次申請紙本證書<strong>免費</strong>，隨附電子證書 (若需補發紙本證書則須美金15元)</li>
+<li>考試時間：於<a class="link" href="https://home.pearsonvue.com/"  target="_blank" rel="noopener"
+    >Pearson VUE</a>官網報名時選擇之考試時間</li>
+<li>考試地點：<a class="link" href="https://www.uuu.com.tw/TestCenter/Vue"  target="_blank" rel="noopener"
+    >恆逸教育</a>、<a class="link" href="https://www.pcschool.com.tw/branch-school"  target="_blank" rel="noopener"
+    >巨匠電腦</a>等考場，以<a class="link" href="https://home.pearsonvue.com/"  target="_blank" rel="noopener"
+    >Pearson VUE</a>官網公布為準</li>
+<li>攜帶物品：<strong>身分證</strong> (查驗用)、<strong>印有英文姓名之信用卡</strong> (查驗用)</li>
+</ul>
+<h2 id="cisco-ccna-200-301">Cisco CCNA (200-301)</h2>
+<p>CCNA，全名Cisco Certified Network Associate，是cisco的網路認證，證明工程師已掌握網路的基礎知識，並可以進行路由器的安裝、配置和操作。(棒讀)<br>
+除非考場有其他安排，不然幾乎每個上班日都可以找到考場考試，考試時間的安排相當彈性。</p>
+<p>cisco認證每隔一段時間就會改版，考試代碼也會隨之更動，200-301代表的正是<strong>考試代碼</strong>。改版後的教材和題庫都會發生變化，練習時要注意不要拿到舊版的教材或題庫，避免在實際考試時遇到的有所出入。<br>
+<img src="https://www.uuu.com.tw/Public/images/course/Cisco/career-path.jpg"
+	
+	
+	
+	loading="lazy"
+	
+		alt="Cisco Certified"
+	
+	
+></p>
+<h2 id="考前準備">考前準備</h2>
+<p>CCNA的考試分為選擇題和拖圖題。選擇題有可能是單選或多選，托圖題則是將左邊的文字方塊拖動到右邊放開即可，非常直覺。<br>
+考試我主要靠公司內部的教育訓練文件、練習考古題，然後將旗標出版社的<a class="link" href="https://www.books.com.tw/products/0010869117"  target="_blank" rel="noopener"
+    >CCNA Certification Study Guide</a>譯本作為參考書來準備。雖然只看考古題的話也能通過，不過建議照著書本的學習軌跡走，收穫會更多。<br>
+<img src="https://im2.book.com.tw/image/getImage?i=https://www.books.com.tw/img/001/086/91/0010869117.jpg&amp;v=5f4639b1&amp;w=348&amp;h=348"
+	
+	
+	
+	loading="lazy"
+	
+		alt="CCNA Certification Study Guide"
+	
+	
+></p>
+<h2 id="考試流程及證照請領">考試流程及證照請領</h2>
+<p>報名流程可以參考<a class="link" href="https://www.uuu.com.tw/TestCenter/Steps"  target="_blank" rel="noopener"
+    >恆逸考試中心的教學</a>到<a class="link" href="https://home.pearsonvue.com/"  target="_blank" rel="noopener"
+    >Pearson VUE</a>官網報名。<br>
+如果需要開立發票才能報帳的話，則需要由考試中心代為報名(恆逸或巨匠都可以)，而發票則是在考試後向考試中心索取。<br>
+報名後請在考試當天的指定時段到考場(<strong>建議提早30分鐘</strong>)，方便工作人員進行作業，也助於緩和緊張情緒。</p>
+<p>我選擇的考場是恆逸考試中心，在考場櫃台報到後，工作人員會跟你核對<strong>身分證</strong>、<strong>印有英文姓名之信用卡</strong>，並拍攝大頭照以確認身分。所有流程完成後工作人員就會帶你進入考場。所有考試一樣，需要將隨身物品放到置物區，考場會提供小白板和白板筆作為計算用途。<br>
+在考前會有一個問卷調查，詢問你的教育程度、公司資訊、距離考場的距離等。這邊要注意的是，其中<strong>你是否滿18歲</strong>和<strong>你是否同意cisco相關規章</strong>請一定要<strong>選擇YES</strong>，否則考試可能會中斷(據說)。</p>
+<p>CCNA的考試時間共170分鐘，考題約100題，及格門檻為825分/1000分。<br>
+需要注意的是，CCNA考試<strong>不能返回上一題修改答案</strong>，請<strong>確認答案沒有選錯再點NEXT送出</strong>，也請注意不要連點兩下NEXT跳題。<br>
+考試完成後會直接在螢幕上顯示是否通過，通過後工作人員會把成績單印出來給你(封面是剛才拍的超醜大頭照)，收好後就可以回家等電子郵件寄來的正式通知啦！</p>
+<p>通過考試後約一周就會收到通知信。我大概在考試完成的兩天後收到通知信，通知可以到<a class="link" href="https://www.certmetrics.com/cisco/"  target="_blank" rel="noopener"
+    >cisco追蹤系統</a>上進行確認及電子證書的下載。通過測驗後也會有一次免費的紙本證書申請機會。</p>
+<p>在<a class="link" href="https://www.certmetrics.com/cisco/"  target="_blank" rel="noopener"
+    >cisco追蹤系統</a>上填寫紙本證書申請後，再過一個月就能收到從美國寄來的紙本證書了！</p>
+<h2 id="後話">後話</h2>
+<p>我是在去年4月份通過CCNA測驗的，距今也超過9個月了，是靠著模糊的記憶寫出這篇文章的。<br>
+<del>我預計在今年中去考CCNP Enterprise，希望我未來考證照時，會記得留下一些學習紀錄。</del><br>
+都3202年了還沒去考==</p>
+<p>以上。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/cisco/">cisco</a>
+        
+            <a href="/tags/ccna/">CCNA</a>
+        
+    </section>
+
+
+    </footer>
+
+
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相關文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/2022/cert-01/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">業餘無線電人員執照 考試心得</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+        2023 canaria
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="3.16.0">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

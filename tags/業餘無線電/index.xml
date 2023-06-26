@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>業餘無線電 on かなりあ</title>
+        <link>https://blog.canaria.cc/tags/%E6%A5%AD%E9%A4%98%E7%84%A1%E7%B7%9A%E9%9B%BB/</link>
+        <description>Recent content in 業餘無線電 on かなりあ</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-tw</language>
+        <lastBuildDate>Sat, 05 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.canaria.cc/tags/%E6%A5%AD%E9%A4%98%E7%84%A1%E7%B7%9A%E9%9B%BB/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>業餘無線電人員執照 考試心得</title>
+        <link>https://blog.canaria.cc/2022/cert-01/</link>
+        <pubDate>Sat, 05 Feb 2022 00:00:00 +0000</pubDate>
+        
+        <guid>https://blog.canaria.cc/2022/cert-01/</guid>
+        <description>&lt;h2 id=&#34;緣起&#34;&gt;緣起&lt;/h2&gt;
+&lt;p&gt;大學時的我百般無聊翻著wiki的時候，發現了&lt;a class=&#34;link&#34; href=&#34;https://dic.pixiv.net/a/%E5%AE%89%E9%83%A8%E8%8F%9C%E3%80%85&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;安部菜々&lt;/a&gt;的CV&lt;a class=&#34;link&#34; href=&#34;https://ja.wikipedia.org/wiki/%E4%B8%89%E5%AE%85%E9%BA%BB%E7%90%86%E6%81%B5&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;三宅麻理恵&lt;/a&gt;擁有&lt;a class=&#34;link&#34; href=&#34;https://ja.wikipedia.org/wiki/%E4%B8%89%E5%AE%85%E9%BA%BB%E7%90%86%E6%81%B5#%E4%BA%BA%E7%89%A9%E3%83%BB%E3%82%A8%E3%83%94%E3%82%BD%E3%83%BC%E3%83%89&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;業餘無線電人員執照&lt;/a&gt;。在蒐集了一下資訊並稍微讀過題庫後，我就直接跑去考試了，前後不到一天，&lt;del&gt;真佩服我當時的行動力&lt;/del&gt;。&lt;br&gt;
+嘿對，原因就這樣，沒什麼其他原因，就是大學時的一時衝動(?)&lt;/p&gt;
+&lt;h2 id=&#34;測驗資訊&#34;&gt;測驗資訊&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;考試費用：新台幣 200元&lt;/li&gt;
+&lt;li&gt;證照費用：新台幣 500元&lt;/li&gt;
+&lt;li&gt;考試時間：每&lt;strong&gt;週一或週五&lt;/strong&gt;9:00~11:20或14:00~16:20 &lt;strong&gt;隨到隨考&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;考試地點：NCC &lt;a class=&#34;link&#34; href=&#34;https://goo.gl/maps/P1u9ty2u8BsdhF2o9&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;北區&lt;/a&gt; / &lt;a class=&#34;link&#34; href=&#34;https://goo.gl/maps/UcojcURu64BpMvAp6&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;中區&lt;/a&gt; / &lt;a class=&#34;link&#34; href=&#34;https://goo.gl/maps/PjpsQkjyCA2k1xx26&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;南區&lt;/a&gt; 監理處&lt;/li&gt;
+&lt;li&gt;攜帶物品：&lt;strong&gt;身分證&lt;/strong&gt; (查驗用)、&lt;strong&gt;1吋大頭貼&lt;/strong&gt; (證照製作用)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;業餘無線電人員執照&#34;&gt;業餘無線電人員執照&lt;/h2&gt;
+&lt;p&gt;業餘無線電人員執照共&lt;strong&gt;分為三等&lt;/strong&gt;，三等為初級、二等為進階、一等為高級。&lt;br&gt;
+三等及二等的題庫約600題、一等的題庫約900題。&lt;/p&gt;
+&lt;p&gt;執照&lt;strong&gt;不得跳級考取&lt;/strong&gt;，須通過三等後才能考取二等、需取得二等資格一段時間後才能考取一等。&lt;/p&gt;
+&lt;p&gt;根據我當年考試的規定，二等以上的業餘無線電人員執照需加考術科測驗，也就是&lt;a class=&#34;link&#34; href=&#34;https://zh.wikipedia.org/wiki/%E6%91%A9%E5%B0%94%E6%96%AF%E7%94%B5%E7%A0%81&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;摩斯電碼&lt;/a&gt;的聽寫。在聽完&lt;a class=&#34;link&#34; href=&#34;https://freqdbo.ncc.gov.tw/exam/application/exam/examc07.aspx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;練習題庫&lt;/a&gt;的模擬試題後我決定直接放棄，因此當時我只考了三等。&lt;br&gt;
+不過摩斯電碼的術科測驗在109年改版的時候被拿掉了，目前無論等級都只需要考筆試測驗即可。因為三等及二等題庫的相似度很高，建議現在要考的人&lt;strong&gt;連續進行三等及二等的筆試，並直接請領二等的執照&lt;/strong&gt;比較划算。&lt;/p&gt;
+&lt;h2 id=&#34;考前準備及考試流程&#34;&gt;考前準備及考試流程&lt;/h2&gt;
+&lt;p&gt;把NCC公布的 &lt;a class=&#34;link&#34; href=&#34;https://www.ncc.gov.tw/chinese/service_detail.aspx?sn=1084&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;考試題庫&lt;/strong&gt;&lt;/a&gt; 看一看，做一下NCC的 &lt;a class=&#34;link&#34; href=&#34;https://freqdbo.ncc.gov.tw/exam/application/exam/examc07.aspx&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;&lt;strong&gt;模擬測試&lt;/strong&gt;&lt;/a&gt; 後我就直接去考了。&lt;br&gt;
+考題分為兩部分，前半為台灣的無線電相關法律規章，後半是相關的電磁學技術及原理等，都是&lt;strong&gt;四選一的選擇題&lt;/strong&gt;。因為正式考題就是從題庫裡面抽的，所以只要題庫有看熟基本上都不會有問題。&lt;del&gt;有興趣的人也可以翻一下大學的電磁學課本&lt;/del&gt;。&lt;/p&gt;
+&lt;p&gt;考試流程很簡單，跟NCC監理處櫃台說要考試後，現場填寫報名表、查驗身分證並繳交考試費後就可以考試了。跟考駕照很類似，雖然規定的考試時間有40分鐘，不過由於考題不多，大概10分鐘以內就能答完了，&lt;strong&gt;答完可以先行離開&lt;/strong&gt;找工作人員。如果要接著考二等的話，考完請重複上面的步驟(填寫報名表、查驗身分證並繳交考試費)進行二等的考試。&lt;/p&gt;
+&lt;p&gt;考試結束後回到櫃台，繳交1吋大頭貼、查驗身分證並繳交規費後，工作人員就會現場幫你製作熱騰騰的(用護貝機護貝的)業餘無線電人員執照了。&lt;/p&gt;
+&lt;h2 id=&#34;後話&#34;&gt;後話&lt;/h2&gt;
+&lt;p&gt;業餘無線電人員執照是我大學考取的第一張證照，也是我畢業後像白紙一樣的履歷上，證照欄中的唯一一張證照。面試官和我看到wiki時一樣，對這張證照充滿了好奇心(畢竟真的很少見)。&lt;br&gt;
+多虧如此在面試時聊得滿開心的，最後也順利錄取進現在的公司。雖然除了面試時拿來聊天外，目前這張證照對我來說沒太大的用處。但在工作一陣子，準備開始考其他證照時，這個經驗也給了不少動力。&lt;/p&gt;
+&lt;p&gt;至於到底需不需要考證照，每個人都有每個人的看法。這邊推薦一篇文章：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a class=&#34;link&#34; href=&#34;https://medium.com/blacksecurity/benefits-of-certifications-ec8880639df8&#34;  target=&#34;_blank&#34; rel=&#34;noopener&#34;
+    &gt;我真的需要考證照嗎? 考證照對就業找工作會有幫助嗎? 一篇考證照的反思與效益分析&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;以上。&lt;/p&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>
